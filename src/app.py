@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+st.set_page_config(
+    page_title="Validador de schema excel"
+)
+
 #Title
-st.title("Primeiro app com Streamlit")
+st.title("Insira o seu excel para validação")
 
 st.markdown('**Hello World!** 🌍')
 

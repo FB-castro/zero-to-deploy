@@ -1,3 +1,5 @@
 [tool.taskipy.tasks]
 run = "streamlit run --server.port 8501 ./src/app.py"
-run_test = "pytest tests/test-app.py"
+stop = "Stop-Process -Id (Get-NetTCPConnection -LocalPort 8501).OwningProcess -Force"
+test = "pytest tests/test-app.py"
+dev = "task stop | task run"
