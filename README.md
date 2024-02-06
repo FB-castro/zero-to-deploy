@@ -3,13 +3,13 @@
 ### Instalação e Configuração
 1. Clone o repositório:
 ```bash
-git clone https://github.com/lvgalvao/dataprojectstarterkit.git
-cd dataprojectstarterkit
+git clone https://github.com/FB-castro/zero-to-deploy.git
+cd zero-to-deploy
 ```
 2. Configure a versão correta do Python com `pyenv`:
 ```bash
-pyenv install 3.11.5
-pyenv local 3.11.5
+pyenv install 3.11.0a3 
+pyenv local 3.11.0a3 
 ```
 3. Instale as dependências do projeto:
 ```bash
