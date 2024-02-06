@@ -1,19 +1,24 @@
 from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
 from time import sleep
+import pytest
+import subprocess
 
-#Definir drive q ser utilizado
-driver = webdriver.Chrome()
+@pytest.fixture
+def driver():
+    process = subprocess.Popen(["task", "run"])
 
-#Timeout implícito
-driver.set_page_load_timeout(5) #Segundos
+    #Definir drive q ser utilizado
+    driver = webdriver.Chrome()
 
-#Tentativa de entrar na página
-try:
+    #Timeout implícito
+    driver.set_page_load_timeout(10) #Segundos
+    yield driver
+
+    #Fechar o webdriver e encerrar o processo após o teste
+    driver.quit()
+    process.kill()
+
+def test_app_opens(driver):
+
     driver.get("http://localhost:8501")
     sleep(5)
-    print("Acessou a página com sucesso")
-except TimeoutException:
-    print("Tempo de carregamento da página excedeu o limite")
-finally:
-    driver.quit()

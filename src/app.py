@@ -24,3 +24,4 @@ dados = pd.DataFrame({
     'coluna': ['A', 'B', 'C', 'D', 'E'],
     'valores': np.random.randn(5)
 })
+
